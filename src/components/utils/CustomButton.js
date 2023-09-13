@@ -1,6 +1,8 @@
-const CustomButton = (props) => {
+import './CustomButton.css'
+
+const CustomButton = ({variant, title}) => {
   return (
-    <button>{props.title}</button>
+    <button className={variant}>{title}</button>
   )
 }
 

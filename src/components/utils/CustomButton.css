@@ -1,0 +1,33 @@
+button {
+  border: none;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+  min-width: 60px;
+  height: 30px;
+  text-transform: uppercase;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.red {
+  background-color: red;
+  color: white;
+}
+
+.blue {
+  background-color: blue;
+  color: white;
+}
+
+.green {
+  background-color: green;
+  color: white;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}

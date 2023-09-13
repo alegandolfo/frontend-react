@@ -6,8 +6,10 @@ const Contato = () => {
       <>
         <Header />
         <h1>Contato</h1>
-        <CustomButton title='Login'/>
-        <CustomButton title='Cadastre-se'/>
+        <CustomButton title='Login' variant='red'/>
+        <CustomButton title='Cadastre-se' variant='blue'/>
+        <CustomButton title='Opções' variant='green'/>
+        <CustomButton title='Sair' variant='yellow'/>
       </>
     )
   }
