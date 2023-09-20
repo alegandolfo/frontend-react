@@ -1,17 +1,24 @@
 'use client'
 
+import { useState } from 'react'
 import './CardUser.css'
-
-const handleDelete = async (userId) => {
-  const response = await fetch(`http://localhost:3300/user/${userId}`, {
-    cache: 'no-store',
-    method: 'DELETE'
-  })
-  console.log(response) 
-}
+import ResponseCache from 'next/dist/server/response-cache'
 
 const CardUser = ({user}) => {
-  return (
+  const [showCard, setShowCard] = useState(true)
+
+  const handleDelete = async (userId) => {
+    const response = await fetch(`http://localhost:3300/user/${userId}`, {
+      cache: 'no-store',
+      method: 'DELETE'
+    })
+  
+    if (response.ok) {
+      setShowCard(false)
+    }
+  }
+
+  return ( <> { showCard ? (
     <div key={user.id} className='card-user'>
       <img src={user.image} alt={user.name} width='70px' height='70px'/>
       <div>
@@ -23,7 +30,7 @@ const CardUser = ({user}) => {
         </p>
       </div>
     </div>
-  )
+  ) : null } </> )
 }
 
 export default CardUser

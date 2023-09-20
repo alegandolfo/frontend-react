@@ -11,6 +11,8 @@
 
 .card-user img {
   border-radius: 50%;
+  min-width: 70px;
+  min-height: 70px;
 }
 
 .card-user div h4 {
