@@ -2,7 +2,6 @@
 
 import { useState } from 'react'
 import './CardUser.css'
-import ResponseCache from 'next/dist/server/response-cache'
 
 const CardUser = ({user}) => {
   const [showCard, setShowCard] = useState(true)
@@ -14,7 +13,10 @@ const CardUser = ({user}) => {
     })
   
     if (response.ok) {
-      setShowCard(false)
+      const result = await response.json()
+      if (result?.success) {
+        setShowCard(false)
+      }
     }
   }
 
